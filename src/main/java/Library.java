@@ -13,4 +13,9 @@ public class Library {
     public int getBooks() {
         return books.size();
     }
+
+
+    public void addBook(Book book) {
+        books.add(book);
+    }
 }

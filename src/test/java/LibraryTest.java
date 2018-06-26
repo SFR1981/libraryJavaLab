@@ -15,7 +15,7 @@ public class LibraryTest {
   @Before
     public void before(){
       library = new Library();
-      book = new Book();
+      book = new Book(Genre.ROMANCE);
   }
 
   @Test
@@ -41,6 +41,24 @@ public class LibraryTest {
       library.addBook(book);
       library.removeBook();
       assertEquals(0, library.getBooks());
+    }
+
+    @Test
+    public void hashStock(){
+      assertEquals(0, library.getStock());
+
+    }
+
+    @Test
+    public void addStock(){
+      library.addStock(Genre.ROMANCE, 32);
+      assertEquals(1, library.getStock());
+    }
+
+    @Test
+    public void stockByGenre(){
+      library.addStock(Genre.FANTASY, 81);
+      assertEquals(81, library.stockByGenre(Genre.FANTASY));
     }
 
 

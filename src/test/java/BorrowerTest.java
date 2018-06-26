@@ -14,7 +14,7 @@ public class BorrowerTest {
     public void before(){
         borrower = new Borrower();
         library = new Library();
-        book = new Book();
+        book = new Book(Genre.ROMANCE);
         library.addBook(book);
     }
 

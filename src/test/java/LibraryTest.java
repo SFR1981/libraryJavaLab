@@ -4,6 +4,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
 public class LibraryTest {
 
@@ -33,6 +34,13 @@ public class LibraryTest {
     public void hasCapacity(){
       library.checkStock(book);
       assertEquals(1, library.getBooks());
+    }
+
+    @Test
+    public void hasLoaned(){
+      library.addBook(book);
+      library.removeBook();
+      assertEquals(0, library.getBooks());
     }
 
 
